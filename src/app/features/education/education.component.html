@@ -1,0 +1,67 @@
+<section id="education" class="education-section container-padding">
+  <div class="education-container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="section-tag">Academic Background</span>
+      <h2 class="section-title">Education & Credentials</h2>
+      <p class="section-subtitle">
+        Rigorous computer science, mathematics, and software engineering education establishing solid algorithmic and theoretical foundations.
+      </p>
+    </div>
+
+    <!-- Education Grid Cards -->
+    <div class="education-grid">
+      @for (edu of portfolioService.educations(); track edu.degree) {
+        <div class="education-card card-surface">
+          <!-- Card Header -->
+          <div class="edu-card-top">
+            <div class="edu-icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.42 10.922a1 1 0 0 0-.019-.838L12.83 2.18a2 2 0 0 0-1.66 0L2.6 10.084a1 1 0 0 0 0 1.832l8.57 7.908a2 2 0 0 0 1.66 0l8.57-7.908a1 1 0 0 0 .02-.994z"/>
+                <path d="M22 10v6"/>
+                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+              </svg>
+            </div>
+            @if (edu.score) {
+              <span class="score-badge">{{ edu.score }}</span>
+            }
+          </div>
+
+          <!-- Degree & Institution Details -->
+          <div class="edu-details">
+            <h3 class="degree-title">{{ edu.degree }}</h3>
+            <h4 class="institution-name">{{ edu.institution }}</h4>
+            <div class="edu-meta">
+              <span class="location-span">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>{{ edu.location }}</span>
+              </span>
+              <span class="period-span">{{ edu.period }}</span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p class="edu-desc">{{ edu.description }}</p>
+
+          <!-- Key Highlights -->
+          <div class="edu-highlights">
+            <h5 class="highlights-heading">Key Focus Areas:</h5>
+            <ul class="highlights-list">
+              @for (item of edu.highlights; track item) {
+                <li class="highlight-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="check-icon">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <span>{{ item }}</span>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

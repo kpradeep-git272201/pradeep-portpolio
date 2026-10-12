@@ -1,0 +1,150 @@
+<section id="home" class="hero-section container-padding">
+  <div class="hero-container">
+    <!-- Left Hero Column: Content & CTAs -->
+    <div class="hero-content">
+      <!-- Availability Badge -->
+      <div class="hero-badge-wrapper">
+        <span class="badge-highlight">
+          <span class="badge-pulse"></span>
+          <span>Available for new opportunities</span>
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-title">
+        Hi, I'm <span class="gradient-text">{{ portfolioService.profile().name }}</span>
+      </h1>
+
+      <!-- Role Subheading -->
+      <h2 class="hero-role">
+        {{ portfolioService.profile().role }}
+      </h2>
+
+      <!-- Bio / Description -->
+      <p class="hero-description">
+        {{ portfolioService.profile().bio }}
+      </p>
+
+      <!-- Key Tech Badges -->
+      <div class="hero-tech-stack">
+        <span class="tech-stack-title">Core Stack:</span>
+        <div class="tech-pills">
+          <span class="tech-pill">Java 17</span>
+          <span class="tech-pill">Spring Boot</span>
+          <span class="tech-pill">Angular</span>
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">Oracle</span>
+          <span class="tech-pill">Ag-Grid</span>
+          <span class="tech-pill">Docker</span>
+        </div>
+      </div>
+
+      <!-- CTA Action Buttons -->
+      <div class="hero-cta-group">
+        <!-- View Projects -->
+        <button type="button" class="btn-primary" (click)="onNavigate('projects')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+            <polyline points="2 17 12 22 22 17"/>
+            <polyline points="2 12 12 17 22 12"/>
+          </svg>
+          <span>View Projects</span>
+        </button>
+
+        <!-- Download Resume -->
+        <a 
+          [href]="portfolioService.profile().resumeUrl" 
+          download="pradeep_kumar_resume.pdf"
+          target="_blank"
+          class="btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span>Download Resume</span>
+        </a>
+
+        <!-- Contact Me -->
+        <button type="button" class="btn-accent" (click)="onNavigate('contact')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m22 2-7 20-4-9-9-4Z"/>
+            <path d="M22 2 11 13"/>
+          </svg>
+          <span>Contact Me</span>
+        </button>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="hero-stats-strip">
+        @for (stat of portfolioService.profile().stats; track stat.label) {
+          <div class="stat-item">
+            <span class="stat-value">{{ stat.value }}</span>
+            <span class="stat-label">{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Right Hero Column: Tech Graphic / Avatar Card -->
+    <div class="hero-visual">
+      <div class="visual-card card-surface">
+        <!-- Window Bar -->
+        <div class="code-window-header">
+          <div class="window-controls">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="window-title">FullStackDeveloper.ts</span>
+          <span class="window-badge">5.4+ YOE</span>
+        </div>
+
+        <!-- Code Snippet Body -->
+        <div class="code-body">
+          <pre><code><span class="code-keyword">const</span> developer = &#123;
+  <span class="code-prop">name</span>: <span class="code-string">'Pradeep Kumar Vishwakarma'</span>,
+  <span class="code-prop">role</span>: <span class="code-string">'Full Stack Developer'</span>,
+  <span class="code-prop">backend</span>: [<span class="code-string">'Java'</span>, <span class="code-string">'Spring Boot'</span>, <span class="code-string">'REST APIs'</span>],
+  <span class="code-prop">frontend</span>: [<span class="code-string">'Angular'</span>, <span class="code-string">'Signals'</span>, <span class="code-string">'Ag-Grid'</span>],
+  <span class="code-prop">database</span>: [<span class="code-string">'PostgreSQL'</span>, <span class="code-string">'Oracle'</span>],
+  <span class="code-prop">missionCritical</span>: [
+    <span class="code-string">'eGramSwaraj (NICSI / MoPR)'</span>,
+    <span class="code-string">'MSAT Management Tool'</span>,
+    <span class="code-string">'U12 workXmate ERP'</span>
+  ],
+  <span class="code-func">status</span>: () =&gt; <span class="code-string">'Ready for high-impact challenges'</span>
+&#125;;</code></pre>
+        </div>
+
+        <!-- Floating Interactive Badge 1: Spring Boot -->
+        <div class="floating-badge badge-spring">
+          <div class="badge-icon spring-icon">🍃</div>
+          <div class="badge-text">
+            <strong>Spring Boot</strong>
+            <span>High-Speed REST APIs</span>
+          </div>
+        </div>
+
+        <!-- Floating Interactive Badge 2: Angular -->
+        <div class="floating-badge badge-angular">
+          <div class="badge-icon angular-icon">🅰️</div>
+          <div class="badge-text">
+            <strong>Angular Standalone</strong>
+            <span>Signal-based Reactivity</span>
+          </div>
+        </div>
+
+        <!-- Floating Interactive Badge 3: Ag-Grid -->
+        <div class="floating-badge badge-aggrid">
+          <div class="badge-icon aggrid-icon">⚡</div>
+          <div class="badge-text">
+            <strong>Ag-Grid Enterprise</strong>
+            <span>100K+ Rows Virtualized</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

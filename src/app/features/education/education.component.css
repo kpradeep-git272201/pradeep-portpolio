@@ -1,0 +1,140 @@
+.education-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: var(--bg-surface);
+}
+
+.education-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .education-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.education-card {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.edu-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.edu-icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--primary-blue);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.score-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(34, 211, 238, 0.12);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+}
+
+.edu-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.degree-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.institution-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.edu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.location-span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.period-span {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+}
+
+.edu-desc {
+  font-size: 0.925rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.edu-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.highlights-heading {
+  font-size: 0.825rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.highlights-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.check-icon {
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+}

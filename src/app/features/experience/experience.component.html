@@ -1,0 +1,92 @@
+<section id="experience" class="experience-section container-padding">
+  <div class="experience-container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="section-tag">Career Journey</span>
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-subtitle">
+        5.4+ years of engineering impact across national public governance platforms and enterprise SaaS software.
+      </p>
+    </div>
+
+    <!-- Timeline Wrapper -->
+    <div class="timeline-wrapper">
+      <div class="timeline-track"></div>
+
+      @for (exp of portfolioService.experiences(); track exp.id) {
+        <div class="timeline-item">
+          <!-- Timeline Node / Marker -->
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+
+          <!-- Timeline Content Card -->
+          <div class="timeline-content card-surface">
+            <!-- Header Row -->
+            <div class="content-header">
+              <div class="role-company-block">
+                <span class="company-name">{{ exp.company }}</span>
+                @if (exp.client) {
+                  <span class="client-badge">Client: {{ exp.client }}</span>
+                }
+                <h3 class="role-title">{{ exp.role }}</h3>
+              </div>
+
+              <div class="meta-block">
+                <span class="period-badge">{{ exp.period }}</span>
+                <span class="location-tag">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  <span>{{ exp.location }}</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Role Summary -->
+            <p class="role-summary">{{ exp.summary }}</p>
+
+            <!-- Key Responsibilities List -->
+            <div class="responsibilities-block">
+              <h4 class="subheading">Key Responsibilities:</h4>
+              <ul class="resp-list">
+                @for (resp of exp.responsibilities; track resp) {
+                  <li class="resp-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bullet-icon">
+                      <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                    <span>{{ resp }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+
+            <!-- Key Achievements (if present) -->
+            @if (exp.achievements && exp.achievements.length > 0) {
+              <div class="achievements-box">
+                <span class="achievement-icon">🏆</span>
+                <div class="achievement-content">
+                  <strong>Key Highlights & Impact:</strong>
+                  @for (ach of exp.achievements; track ach) {
+                    <p>{{ ach }}</p>
+                  }
+                </div>
+              </div>
+            }
+
+            <!-- Technologies Used -->
+            <div class="exp-tech-block">
+              <span class="tech-label">Technologies:</span>
+              <div class="tech-pills">
+                @for (tech of exp.technologies; track tech) {
+                  <span class="tech-pill">{{ tech }}</span>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,101 @@
+<section id="skills" class="skills-section container-padding">
+  <div class="skills-container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="section-tag">Technical Proficiency</span>
+      <h2 class="section-title">Skills & Technologies</h2>
+      <p class="section-subtitle">
+        A comprehensive toolkit cultivated across 5.4+ years of building enterprise backends, high-performance data grids, and reactive web applications.
+      </p>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="category-tabs-container">
+      <div class="category-tabs">
+        @for (cat of categories; track cat) {
+          <button 
+            type="button" 
+            class="tab-btn" 
+            [class.active]="selectedCategory() === cat"
+            (click)="setCategory(cat)">
+            {{ cat }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="skills-grid">
+      @for (skill of filteredSkills(); track skill.name) {
+        <div class="skill-card card-surface" [class.featured-skill]="skill.featured">
+          <div class="skill-header">
+            <div class="skill-info">
+              <span class="skill-category-pill">{{ skill.category }}</span>
+              <h3 class="skill-name">{{ skill.name }}</h3>
+            </div>
+            @if (skill.experience) {
+              <span class="skill-exp-tag">{{ skill.experience }}</span>
+            }
+          </div>
+
+          @if (skill.description) {
+            <p class="skill-description">{{ skill.description }}</p>
+          }
+
+          <!-- Proficiency Bar -->
+          <div class="proficiency-wrapper">
+            <div class="proficiency-labels">
+              <span class="level-label">Proficiency</span>
+              <span class="level-percent">{{ skill.proficiency }}%</span>
+            </div>
+            <div class="progress-track">
+              <div 
+                class="progress-fill" 
+                [style.width.%]="skill.proficiency">
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Stack Summary Overview Strip -->
+    <div class="stack-overview-grid">
+      <!-- Frontend Box -->
+      <div class="overview-box card-surface">
+        <div class="overview-header">
+          <span class="overview-icon">🅰️</span>
+          <h4>Frontend Engineering</h4>
+        </div>
+        <p>Modular Angular Standalone components, Signal-based reactivity, custom Ag-Grid renderers, RxJS streams, and responsive design systems.</p>
+      </div>
+
+      <!-- Backend Box -->
+      <div class="overview-box card-surface">
+        <div class="overview-header">
+          <span class="overview-icon">🍃</span>
+          <h4>Backend & APIs</h4>
+        </div>
+        <p>Enterprise Java & Spring Boot, high-throughput REST APIs, Spring Data JPA/Hibernate, microservices, and Node.js middle-tiers.</p>
+      </div>
+
+      <!-- Database Box -->
+      <div class="overview-box card-surface">
+        <div class="overview-header">
+          <span class="overview-icon">🗄️</span>
+          <h4>Database Architecture</h4>
+        </div>
+        <p>PostgreSQL and Oracle DB schema design, complex query optimization, index tuning, and performance profiling for large datasets.</p>
+      </div>
+
+      <!-- DevOps Box -->
+      <div class="overview-box card-surface">
+        <div class="overview-header">
+          <span class="overview-icon">🐳</span>
+          <h4>DevOps & Tooling</h4>
+        </div>
+        <p>Docker containerization, Git branching workflows, multi-module Maven builds, Postman API contract testing, and Linux server management.</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,246 @@
+.experience-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.experience-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Timeline Structure */
+.timeline-wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 2rem;
+}
+
+@media (min-width: 768px) {
+  .timeline-wrapper {
+    padding-left: 3rem;
+  }
+}
+
+.timeline-track {
+  position: absolute;
+  top: 15px;
+  bottom: 20px;
+  left: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary-blue), var(--accent-cyan) 60%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .timeline-track {
+    left: 12px;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Marker Dot */
+.timeline-marker {
+  position: absolute;
+  top: 24px;
+  left: -2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .timeline-marker {
+    left: -3rem;
+  }
+}
+
+.marker-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  box-shadow: 0 0 0 4px var(--bg-primary), 0 0 12px var(--primary-blue);
+  transition: all 0.25s ease;
+}
+
+.timeline-item:hover .marker-dot {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 0 5px var(--bg-primary), 0 0 18px var(--accent-cyan);
+  transform: scale(1.2);
+}
+
+/* Timeline Card */
+.timeline-content {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.content-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .content-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.role-company-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.company-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.client-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+}
+
+.role-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.meta-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.period-badge {
+  font-size: 0.825rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--primary-blue);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.role-summary {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+.subheading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.resp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.resp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.bullet-icon {
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.achievements-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(34, 211, 238, 0.06);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+}
+
+.achievement-icon {
+  font-size: 1.25rem;
+}
+
+.achievement-content strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  margin-bottom: 4px;
+}
+
+.achievement-content p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.exp-tech-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tech-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-pill {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--bg-card-hover);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+}
